@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="مطرشم | شروحات تقنية وبرامج مفيدة لتجربة كمبيوتر أسهل وأذكى.">
+    <title>مطرشم | Metarsham</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        darkBg: '#000000',
+                        darkCard: '#111111'
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        poppins: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/data.js" defer></script>
+    <script src="js/i18n.js" defer></script>
+    <script src="js/main.js" defer></script>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-darkBg dark:text-gray-100 font-cairo transition-colors duration-300">
+
+    <nav class="fixed top-0 inset-x-0 z-50 bg-white/90 dark:bg-darkBg/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center min-h-20 gap-4">
+                <a href="#home" class="flex items-center gap-3 shrink-0">
+                    <img src="assets/profile.jpg" alt="Metarsham" width="48" height="48" class="w-12 h-12 rounded-full border-2 border-primary object-cover">
+                    <span class="text-lg sm:text-2xl font-bold">مطرشم | Metarsham</span>
+                </a>
+
+                <div class="hidden md:flex gap-8 items-center">
+                    <a href="#home" class="nav-link" data-i18n="navHome">الرئيسية</a>
+                    <a href="#videos" class="nav-link" data-i18n="navVideos">الفيديوهات</a>
+                    <a href="#downloads" class="nav-link" data-i18n="navDownloads">التحميلات</a>
+                </div>
+
+                <div class="flex gap-2 sm:gap-4 shrink-0">
+                    <button id="themeToggle" type="button" aria-label="Toggle theme" class="px-3 py-2 rounded-lg bg-gray-200 dark:bg-gray-800 text-yellow-500 hover:bg-gray-300 dark:hover:bg-gray-700 transition">
+                        <i class="fa-solid fa-sun text-xl" id="themeIcon"></i>
+                    </button>
+                    <button id="langToggle" type="button" class="px-3 py-2 rounded-lg bg-gray-200 dark:bg-gray-800 font-bold hover:bg-gray-300 dark:hover:bg-gray-700 transition">EN</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero-section px-4 text-center">
+            <div class="max-w-4xl mx-auto animate-on-scroll">
+                <h1 class="text-4xl md:text-6xl font-extrabold" data-i18n="heroTitle">خلي استخدامك للكمبيوتر أذكى وأسهل!</h1>
+                <p class="hero-description text-lg sm:text-xl text-gray-600 dark:text-gray-400" data-i18n="heroDesc">شروحات تقنية بسيطة، برامج مفيدة، وحيل لويندوز هتوفر وقتك.</p>
+                <a href="#downloads" class="inline-flex items-center gap-3 bg-primary hover:bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg shadow-blue-500/30 transition-transform hover:scale-105" data-i18n="btnExplore">
+                    استكشف التحميلات <i class="fa-solid fa-arrow-down"></i>
+                </a>
+            </div>
+        </section>
+
+        <section id="videos" class="py-20 bg-white dark:bg-darkCard border-y border-gray-100 dark:border-gray-800">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="section-title text-3xl font-bold text-center animate-on-scroll" data-i18n="videosTitle">فيديوهات مميزة</h2>
+                <div id="videosGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <section id="downloads" class="py-20">
+            <div class="max-w-5xl mx-auto px-4">
+                <h2 class="section-title text-3xl font-bold text-center animate-on-scroll" data-i18n="downloadsTitle">كل اللي محتاجه في مكان واحد!</h2>
+                <p class="text-center text-gray-600 dark:text-gray-400 mb-8 animate-on-scroll" data-i18n="downloadsDesc">دور على البرنامج أو الأداة اللي اتكلمنا عنها في الفيديو.</p>
+
+                <div class="max-w-2xl mx-auto mb-10 animate-on-scroll">
+                    <input type="search" id="searchInput" placeholder="اكتب اسم البرنامج أو الأداة..." aria-label="Search downloads" class="w-full bg-white dark:bg-darkCard border-2 border-gray-200 dark:border-gray-700 rounded-xl py-4 px-6 text-lg focus:border-primary outline-none transition">
+                </div>
+
+                <div id="downloadsGrid" class="flex flex-col gap-4" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 bg-white dark:bg-darkCard border-y border-gray-100 dark:border-gray-800">
+            <div class="max-w-3xl mx-auto px-4 text-center animate-on-scroll">
+                <h2 class="section-title text-3xl font-bold" data-i18n="aboutTitle">عن القناة</h2>
+                <p class="text-gray-600 dark:text-gray-400 leading-8 mb-8" data-i18n="aboutDesc">مطرشم قناة هدفها تبسيط التكنولوجيا ومساعدة أي حد يستخدم الكمبيوتر بشكل أفضل.</p>
+                <a href="https://www.youtube.com/@Metarsham" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl font-bold transition" data-i18n="aboutBtn">
+                    اشترك في القناة
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-950 text-white py-10 text-center px-4">
+        <p class="mb-3" data-i18n="footerDesc">نجعل استخدام الكمبيوتر أسهل وأذكى.</p>
+        <p class="text-gray-400 mb-5"><span data-i18n="footerCopy">مطرشم | Metarsham. جميع الحقوق محفوظة.</span> &copy; <span id="year"></span></p>
+        <a href="https://www.youtube.com/@Metarsham" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="text-red-500 text-2xl hover:text-red-400 transition">
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    min-width: 320px;
+}
+
+body.font-cairo {
+    font-family: 'Cairo', sans-serif;
+}
+
+body.font-poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-link {
+    font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #3b82f6;
+}
+
+.hero-section {
+    min-height: 640px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 140px;
+    padding-bottom: 80px;
+}
+
+.hero-section h1 {
+    line-height: 1.65;
+    letter-spacing: 0.2px;
+    margin-bottom: 28px;
+    text-wrap: balance;
+}
+
+.hero-description {
+    line-height: 1.9;
+    margin-top: 0;
+    margin-bottom: 38px;
+}
+
+.section-title {
+    line-height: 1.7;
+    margin-bottom: 36px;
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.animate-on-scroll.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-hover {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.video-card img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.download-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.download-card a {
+    white-space: nowrap;
+}
+
+.empty-message {
+    text-align: center;
+    padding: 28px 16px;
+    color: #9ca3af;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 580px;
+        padding-top: 130px;
+        padding-bottom: 65px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.2rem;
+        line-height: 1.65;
+        margin-bottom: 24px;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .section-title {
+        margin-bottom: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .download-card {
+        align-items: flex-start;
+    }
+
+    .download-card a {
+        padding: 10px 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
